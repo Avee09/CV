@@ -115,3 +115,16 @@ h1 {
     font-size: 1.2em;
     color: #555;
 }
+.nav-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #218838;
