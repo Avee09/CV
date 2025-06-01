@@ -885,8 +885,8 @@ const questions = [
     {
         question: "99. In human beings, number of pairs of somatic chromosomes in a cell are",
         answers: [
-            { text: "22", correct: true },
-            { text: "23", correct: false },
+            { text: "22", correct: false },
+            { text: "23", correct: true },
             { text: "20", correct: false },
             { text: "21", correct: false }
         ]
