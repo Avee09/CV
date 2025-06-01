@@ -902,6 +902,7 @@ const questions = [
     }
 ];
 
+
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
@@ -921,15 +922,14 @@ function startQuiz() {
     quizSection.classList.remove('hide');
     resultContainer.classList.add('hide');
     nextButton.classList.add('hide');
-    // Removed redundant feedbackElement class removal here as resetState() handles it
+    feedbackElement.classList.remove('correct', 'incorrect');
+    feedbackElement.textContent = '';
     showQuestion();
 }
 
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    // This line is fine, but question numbers are already part of the question string.
-    // If you wanted to dynamically add them, you'd adjust this.
     questionElement.innerText = currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
@@ -945,8 +945,6 @@ function showQuestion() {
 }
 
 function resetState() {
-    // Consider if clearStatusClass(document.body) is truly necessary or if it's a remnant.
-    // If you don't style the body with 'correct'/'incorrect' classes, this can be removed.
     clearStatusClass(document.body);
     nextButton.classList.add('hide');
     feedbackElement.classList.remove('correct', 'incorrect');
@@ -968,7 +966,7 @@ function selectAnswer(e) {
     } else {
         feedbackElement.textContent = 'Incorrect!';
         feedbackElement.classList.add('incorrect');
-        // Highlight the correct answer when an incorrect one is chosen
+        // Optionally, highlight the correct answer
         Array.from(answerButtonsElement.children).forEach(button => {
             if (button.dataset.correct === 'true') {
                 setStatusClass(button, true);
@@ -979,7 +977,7 @@ function selectAnswer(e) {
     // Disable all buttons after an answer is selected
     Array.from(answerButtonsElement.children).forEach(button => {
         button.removeEventListener('click', selectAnswer); // Remove event listener
-        button.style.pointerEvents = 'none'; // Visually disable pointer events
+        button.style.pointerEvents = 'none'; // Disable pointer events
     });
 
     nextButton.classList.remove('hide');
@@ -1020,7 +1018,6 @@ restartButton.addEventListener('click', startQuiz);
 
 // Initial call to start the quiz when the page loads
 startQuiz();
-
 
 
 
