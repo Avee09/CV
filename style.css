@@ -1,1 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
 
+.quiz-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#quiz {
+    margin-top: 20px;
+}
+
+#question {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for answers */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover:not(.correct):not(.incorrect) {
+    background-color: #0056b3;
+}
+
+.btn.correct {
+    background-color: #28a745; /* Green for correct */
+    color: white;
+}
+
+.btn.incorrect {
+    background-color: #dc3545; /* Red for incorrect */
+    color: white;
+}
+
+.feedback {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.feedback.correct {
+    color: #28a745;
+}
+
+.feedback.incorrect {
+    color: #dc3545;
+}
+
+.next-btn, #restart-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover, #restart-btn:hover {
+    background-color: #5a6268;
+}
+
+.hide {
+    display: none;
+}
+
+#result-container {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#result-container h2 {
+    color: #333;
+}
+
+#result-container p {
+    font-size: 1.2em;
+    color: #555;
+}
