@@ -1,4 +1,5 @@
 
+
 const questions = [
     {
         question: "1. Which of the following is not an insect?",
@@ -1035,3 +1036,5 @@ restartButton.addEventListener('click', startQuiz);
 
 // Initial call to start the quiz when the page loads
 startQuiz();
+
+
